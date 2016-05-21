@@ -32,6 +32,8 @@ p {
 }
 </style>
 
+
+
 <body>
     <div id="container">
         <h1>Hello World!!!!</h1>
@@ -41,10 +43,10 @@ p {
 			</p>
 			<br>
 			<p class="ext-links-container">
-				<span><a class= "ext-links"  target='_blank' href='https://in.linkedin.com/pub/kuldeep-jadhav/19/227/604'><i class="fa fa-linkedin-square"></i></a></span>
-            <span><a class= "ext-links" target='_blank' href='https://github.com/kuldeepJadhav'><i class="fa fa-github-square"></i></a></span>
-            <span><a class= "ext-links" target='_blank' href='https://twitter.com/KuldeepJadhav14'><i class="fa fa-twitter-square"></i></a></span>
-            <span><a class= "ext-links" target='_blank' href='https://www.facebook.com/kuldeep.v.jadhav'><i class="fa fa-facebook-official"></i></a></span>
+				<span><a class= "ext-links" onclick="goToLink('LinkedIn')" target='_blank' href='https://in.linkedin.com/pub/kuldeep-jadhav/19/227/604'><i class="fa fa-linkedin-square"></i></a></span>
+            <span><a class= "ext-links" onclick="goToLink('GitHub')" target='_blank' href='https://github.com/kuldeepJadhav'><i class="fa fa-github-square"></i></a></span>
+            <span><a class= "ext-links" onclick="goToLink('Twitter')" target='_blank' href='https://twitter.com/KuldeepJadhav14'><i class="fa fa-twitter-square"></i></a></span>
+            <span><a class= "ext-links" onclick="goToLink('facebook')" target='_blank' href='https://www.facebook.com/kuldeep.v.jadhav'><i class="fa fa-facebook-official"></i></a></span>
         </p>
     </div>
 </body>
@@ -63,5 +65,13 @@ p {
 
 ga('create', 'UA-78067752-1', 'auto');
 ga('send', 'pageview');
+
+function goToLink(label) {
+	if(ga) {
+		console.log('Sending event for ', label);
+		ga('send', 'event', 'View', 'click', label);
+	}
+}
+
 </script>
 <html>
